@@ -1,0 +1,37 @@
+Kita	Standup	2/5	0.4
+Kita	Standup	6/5	1
+Kita	Standup	7/5	0.5
+Kita	Standup	10/5	0.5
+Kita	Standup	20/5	0.4
+Kita	Standup	21/5	0.5
+Kita	Standup	27/5	0.4
+Kita	Standup	28/5	0.4
+Kita	standup	30/5	1.3
+Kita	standup	31/5	0.4
+
+Kita	Estimations	23/5	5.5
+
+
+Kita	support for last behappy metting	29/5	0.5
+Kita	code review (Guille)	30/5	1
+
+Estimations     55
+https://gitlab.com/aleph-engineering/kita-frontend/issues/804   13
+https://gitlab.com/aleph-engineering/kita-frontend/issues/803   3
+https://gitlab.com/aleph-engineering/kita-frontend/issues/800   4
+https://gitlab.com/aleph-engineering/kita-frontend/issues/799   4
+https://gitlab.com/aleph-engineering/kita-frontend/issues/796   4
+https://gitlab.com/aleph-engineering/kita-frontend/issues/790   4
+https://gitlab.com/aleph-engineering/kita-frontend/issues/789   3
+https://gitlab.com/aleph-engineering/kita-frontend/issues/788   2
+
+https://gitlab.com/aleph-engineering/kita-frontend/issues/766   10
+https://gitlab.com/aleph-engineering/kita-frontend/issues/763   100
+https://gitlab.com/aleph-engineering/kita-frontend/issues/753   50
+https://gitlab.com/aleph-engineering/kita-frontend/issues/743   20
+https://gitlab.com/aleph-engineering/kita-frontend/issues/732   35
+https://gitlab.com/aleph-engineering/kita-frontend/issues/730   3
+https://gitlab.com/aleph-engineering/kita-frontend/issues/729   20
+https://gitlab.com/aleph-engineering/kita-frontend/issues/728   5
+https://gitlab.com/aleph-engineering/kita-frontend/issues/727   8
+https://gitlab.com/aleph-engineering/kita-frontend/issues/725   3
