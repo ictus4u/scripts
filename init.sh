@@ -334,7 +334,14 @@ sudo apt-get -y install \
     ca-certificates \
     curl \
     software-properties-common
-curl --proxy "${proxy}" --proxy-user "${proxy_creds}" -fsSL http://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+if [ "${proxy}" != "" ]; then
+    proxy_param="--proxy ${proxy}"
+fi
+if [ "${proxy_creds}" != "" ]; then
+    proxy_creds_param="--proxy-user ${proxy_creds}"
+fi
+curl "${proxy_param}" "${proxy_creds_param}" -fsSL http://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ## TODO: fix this repo address to meet direct/cached mode switch
 sudo add-apt-repository "deb [arch=amd64] http://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get -y install docker-ce
@@ -344,13 +351,16 @@ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 sudo chmod g+rwx "$HOME/.docker" -R
 sudo systemctl enable docker
 sudo mkdir -p /etc/systemd/system/docker.service.d
-cat << EOT | sudo tee /etc/systemd/system/docker.service.d/https-proxy.conf
-[Service]
-Environment="HTTPS_PROXY=${proxy}/" "NO_PROXY=${proxy_no}"
-EOT
+sudo mkdir -p /home/root/docker/
+sudo rsync -aqxP /var/lib/docker/ /home/root/docker/
+#cat << EOT | sudo tee /etc/systemd/system/docker.service.d/https-proxy.conf
+#[Service]
+#Environment="HTTPS_PROXY=${proxy}/" "NO_PROXY=${proxy_no}"
+#EOT
 cat <<EOT | sudo tee /etc/docker/daemon.json
 {
-    "dns": ["10.10.1.43", "8.8.8.8", "8.8.4.4"]
+    "dns": ["10.10.1.43", "8.8.8.8", "8.4.4.4"],
+    "data-root": "/home/root/docker"
 }
 EOT
 sudo systemctl daemon-reload
