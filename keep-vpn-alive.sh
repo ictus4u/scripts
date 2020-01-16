@@ -6,19 +6,14 @@
 ###  2. Add: * * * * * path_to_this_script       ###
 ####################################################
 
-# Google DNS
-testIp="8.8.8.8"
-
-# www.cubdebate.cu
-testLocalIp="190.92.127.78"
+VPN_SERVICE="openvpn@baldor"
+iface=tun0
 
 for i in {1..2}; do
-  (ping -q -n -c 3 -w 6 ${testIp} >/dev/null);
-  if [ ! $? ]; then
-    (ping -q -n -c 3 -w 6 ${testLocalIp} >/dev/null);
-    if [ $? ]; then
-      vpn-restart;
-    fi
+  ifconfig ${iface} > /dev/null 2>&1
+  if [ $? == 0 ]; then
+    sudo service ${VPN_SERVICE} stop
+    sudo service ${VPN_SERVICE} start
   fi
   sleep 30;
 done
