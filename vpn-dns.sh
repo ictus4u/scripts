@@ -9,7 +9,7 @@ HOSTS_BACUP_FILE=/etc/hosts.tpl
 SSH_CREDS="-lroot vpn00.aleph.engineering"
 VPN_LOGS_FULL_PATH="/root/docker-openvpn/vpnlog.log"
 MAIN_SERVER=one.aleph
-MAIN_ALIASES="netreg zero bionic ns1 xenial ubuntu-lts lambda ubuntu debian stack nexus nexus-sonatype mcu-server maven devdocs w3schools python pip pypi stuff doc docs public github geminabox hound code redmine wordpress wpae wordpressm mentoring pp pinkfloyd-poker-planning deb grapher gallery jira aria git gogs jenkins sonar docker-registry iot-demo zerowebtoolkit packagist meet ce ubuntu-all monitor sonar7 portainer ce-ui-mocked wpad prometheus zabbix kita ip capitolio capitol raul camera001"
+MAIN_ALIASES="netreg zero gitlab bionic ns1 xenial ubuntu-lts lambda ubuntu debian stack nexus nexus-sonatype mcu-server maven devdocs w3schools python pip pypi stuff doc docs public github geminabox hound code redmine wordpress wpae wordpressm mentoring pp pinkfloyd-poker-planning deb grapher gallery jira aria git gogs jenkins sonar docker-registry iot-demo zerowebtoolkit packagist meet ce ubuntu-all monitor sonar7 portainer ce-ui-mocked wpad prometheus zabbix kita ip capitolio capitol raul camera001"
 
 set_alias() {
     sudo sed -i '/ '$1' / s/\([0-9.]*\)\(.*\)/\0\n\1 '$2'.aleph '$2'.cu.aleph.engineering/' ${HOSTS_FILE}
